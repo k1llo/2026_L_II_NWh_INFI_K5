@@ -23,13 +23,14 @@ jobs:
   docker-build:  
 
     machine: 
-
       image: ubuntu-2004:current
+      docker_layer_caching: true
     
     steps: 
 
       - checkout 
       - run: make docker_build
+      - run: make docker_push
 
 
 workflows: 
