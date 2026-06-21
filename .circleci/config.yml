@@ -8,9 +8,7 @@ jobs:
 
     machine: 
 
-      image: ubuntu-2004:current 
-
-        
+      image: ubuntu-2004:current       
 
     steps: 
 
@@ -20,7 +18,18 @@ jobs:
 
       - run: make lint 
 
-      - run: make test      
+      - run: make test     
+
+  docker-build:  
+
+    machine: 
+
+      image: ubuntu-2004:current
+    
+    steps: 
+
+      - run: docker_build
+
 
 workflows: 
 
@@ -28,4 +37,5 @@ workflows:
 
     jobs: 
 
-      - build-and-test-and-lint 
+      - build-and-test-and-lint
+      - docker-build
