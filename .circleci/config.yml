@@ -27,7 +27,8 @@ jobs:
       image: ubuntu-2004:current
     
     steps: 
-
+    
+      - checkout 
       - run: docker_build
 
 
